@@ -1,18 +1,32 @@
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 def main():
     pygame.init() # Initialize all imported pygame modules
     pygame.display.set_caption("Text Game") # Set the window's title
     screen = pygame.display.set_mode((1280, 720)) # Initialize the window and set its size to 1280x720
     background = pygame.Surface((1280, 720))
-    background.fill(pygame.Color('#000000'))
+    background.fill(pygame.Color('#222222'))
     manager = pygame_gui.UIManager((800, 600))
     clock = pygame.time.Clock() # Create clock object to track time
     running = True # Set the running flag to true so the main loop will run
 
-    manager = pygame_gui.UIManager((800, 600), theme_path="src/themes/quick_start.json")
-    hello_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 275), (100, 50)),
+    manager = pygame_gui.UIManager((1280, 720), theme_path="themes/defaults.json")
+    manager.get_theme().load_theme("themes/buttons.json")
+    manager.get_theme().load_theme("themes/labels.json")
+
+    scene_title_rect = pygame.Rect(0, 0, 1280, 200)
+    scene_title = pygame_gui.elements.UILabel(relative_rect=scene_title_rect,
+                                              text='Fantasy Game',
+                                              manager=manager,
+                                              object_id=ObjectID(class_id='@heading', object_id='#h1'))
+    scene_body = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(0, 200, 1280, 400),
+                                             text='Sample body text. This is where the scene is described in detail to give players context on what is going on.',
+                                             manager=manager,
+                                             object_id=ObjectID(class_id='@body', object_id='#p'))
+    
+    hello_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(0, 600, 1280, 120),
                                              text='Say Hello',
                                              manager=manager)
 
