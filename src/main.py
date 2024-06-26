@@ -1,5 +1,6 @@
 import pygame
 import pygame_gui
+import data_parser
 from pygame_gui.core import ObjectID
 
 def main():
@@ -29,6 +30,12 @@ def main():
     hello_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(0, 600, 1280, 120),
                                              text='Say Hello',
                                              manager=manager)
+    
+    data = data_parser.load_json_data('resources/dialogue/scene_test2.json')
+    characters = data_parser.parse_characters(data)
+    character = characters[0]
+    print(character.get_name())
+    print(character.get_guid())
 
     # Main loop
     while running:
