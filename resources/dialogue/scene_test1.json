@@ -1,1 +1,148 @@
-{"name":"scene_test1","guid":"b5db5b54-f3b5-528b-8dd0-8657bf7ab88e","dateTime":"Mon, 10 Jun 2024 23:26:12 GMT","root":{"guid":"72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4","type":"DIALOGUE_NODE","characterGuid":"76c3bb08-71e9-6aeb-6fc6-3b92294590d3","label":"test1","content":"You walk into the store to buy a drink. You look in the cooler and see the different cold drinks available. What drink do you choose?","choiceGuids":["3af38c67-7ecc-5668-44ec-e2cb27d960cf","79fbaf3e-844d-561e-b458-fea26afdd949","a679a474-8712-5c57-b933-ef10dffc149f"]},"characters":[{"guid":"76c3bb08-71e9-6aeb-6fc6-3b92294590d3","name":"Narrator"},{"guid":"82af98df-0b2b-137f-b57a-8cc02af2b968","name":"Cashier"}],"variables":[],"choices":[{"guid":"3af38c67-7ecc-5668-44ec-e2cb27d960cf","parentGuid":"72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4","nextGuid":"264908aa-35b4-dcd5-eb5b-df13f1c7ac2d","content":"Water"},{"guid":"79fbaf3e-844d-561e-b458-fea26afdd949","parentGuid":"72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4","nextGuid":"cc770227-fc64-c665-00a8-8da088a7af56","content":"Coke"},{"guid":"a679a474-8712-5c57-b933-ef10dffc149f","parentGuid":"72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4","nextGuid":"488a67b6-f97b-5a04-f344-3cdb9b07e243","content":"Coffee"},{"guid":"67c01608-4d49-9b02-7ba7-df52d3ca8135","parentGuid":"03ad97fa-51b1-0b8a-1f7e-09e7a0d8afa3","nextGuid":"ca48d6a6-1419-95df-6b82-706961e6f81a","content":"Next"},{"guid":"ed887d6c-dace-fe56-8590-4e22f715dc13","parentGuid":"004a1a67-f090-fb64-8195-1e5104c7caf3","nextGuid":"92a458c6-a8c3-efb5-74ed-967b0f5dbddb","content":"Pay"},{"guid":"57a68726-ead4-dd95-5684-90c50cdd7408","parentGuid":"004a1a67-f090-fb64-8195-1e5104c7caf3","nextGuid":"81259fb7-81ff-e9f9-3d87-be1089706f49","content":"Leave"},{"guid":"d8a80ac7-4b16-8ef4-1687-8f2611ac268f","parentGuid":"8bb23a0a-d8a0-188e-7feb-95b28236e94d","nextGuid":"3ae01103-f270-5913-f0eb-f661148e3a83","content":"Goodbye."},{"guid":"7297b614-7811-e9e7-b71e-303a74cdd526","parentGuid":"6ac57eb6-66a8-073c-078e-48ad6e1d4758","nextGuid":"92a458c6-a8c3-efb5-74ed-967b0f5dbddb","content":"Pay"},{"guid":"45e03349-d4ae-836c-e196-3b2b88c70d46","parentGuid":"6ac57eb6-66a8-073c-078e-48ad6e1d4758","nextGuid":"3ae01103-f270-5913-f0eb-f661148e3a83","content":"Leave"}],"dialogueNodes":[{"guid":"120d1f52-8261-39a0-9e04-3d953c3eabf5","type":"DIALOGUE_NODE","characterGuid":"76c3bb08-71e9-6aeb-6fc6-3b92294590d3","label":"test1","content":"You walk up to the cashier and place your drink on the counter.","choiceGuids":["67c01608-4d49-9b02-7ba7-df52d3ca8135"]},{"guid":"ca48d6a6-1419-95df-6b82-706961e6f81a","type":"DIALOGUE_NODE","characterGuid":"82af98df-0b2b-137f-b57a-8cc02af2b968","label":"test1","content":"Your total is $3.50.","choiceGuids":["ed887d6c-dace-fe56-8590-4e22f715dc13","57a68726-ead4-dd95-5684-90c50cdd7408"]},{"guid":"e00ecd11-0f8a-c7d6-1088-b5f1493ec8f6","type":"DIALOGUE_NODE","characterGuid":"82af98df-0b2b-137f-b57a-8cc02af2b968","label":"test1","content":"Thanks for shopping!","choiceGuids":["d8a80ac7-4b16-8ef4-1687-8f2611ac268f"]},{"guid":"81259fb7-81ff-e9f9-3d87-be1089706f49","type":"DIALOGUE_NODE","characterGuid":"82af98df-0b2b-137f-b57a-8cc02af2b968","label":"test1","content":"You forgot to pay!","choiceGuids":["7297b614-7811-e9e7-b71e-303a74cdd526","45e03349-d4ae-836c-e196-3b2b88c70d46"]}],"conditionNodes":[],"randomNodes":[],"eventNodes":[{"guid":"264908aa-35b4-dcd5-eb5b-df13f1c7ac2d","type":"EVENT_NODE","name":"player.addItem \"water\"","nextGuid":"120d1f52-8261-39a0-9e04-3d953c3eabf5"},{"guid":"cc770227-fc64-c665-00a8-8da088a7af56","type":"EVENT_NODE","name":"player.addItem \"coke\"","nextGuid":"120d1f52-8261-39a0-9e04-3d953c3eabf5"},{"guid":"488a67b6-f97b-5a04-f344-3cdb9b07e243","type":"EVENT_NODE","name":"player.addItem \"coffee\"","nextGuid":"120d1f52-8261-39a0-9e04-3d953c3eabf5"},{"guid":"92a458c6-a8c3-efb5-74ed-967b0f5dbddb","type":"EVENT_NODE","name":"player.removeBalance 3.5","nextGuid":"e00ecd11-0f8a-c7d6-1088-b5f1493ec8f6"},{"guid":"3ae01103-f270-5913-f0eb-f661148e3a83","type":"EVENT_NODE","name":"endScene"}],"repeatNodes":[]}
+{
+  "name": "scene_test1",
+  "guid": "b5db5b54-f3b5-528b-8dd0-8657bf7ab88e",
+  "dateTime": "Mon, 10 Jun 2024 23:26:12 GMT",
+  "root": {
+    "guid": "72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4",
+    "type": "DIALOGUE_NODE",
+    "characterGuid": "76c3bb08-71e9-6aeb-6fc6-3b92294590d3",
+    "label": "test1",
+    "content": "You walk into the store to buy a drink. You look in the cooler and see the different cold drinks available. What drink do you choose?",
+    "choiceGuids": [ "3af38c67-7ecc-5668-44ec-e2cb27d960cf", "79fbaf3e-844d-561e-b458-fea26afdd949", "a679a474-8712-5c57-b933-ef10dffc149f" ]
+  },
+  "characters": [
+    {
+      "guid": "76c3bb08-71e9-6aeb-6fc6-3b92294590d3",
+      "name": "Narrator"
+    },
+    {
+      "guid": "82af98df-0b2b-137f-b57a-8cc02af2b968",
+      "name": "Cashier"
+    }
+  ],
+  "variables": [],
+  "choices": [
+    {
+      "guid": "3af38c67-7ecc-5668-44ec-e2cb27d960cf",
+      "parentGuid": "72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4",
+      "nextGuid": "264908aa-35b4-dcd5-eb5b-df13f1c7ac2d",
+      "content": "Water"
+    },
+    {
+      "guid": "79fbaf3e-844d-561e-b458-fea26afdd949",
+      "parentGuid": "72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4",
+      "nextGuid": "cc770227-fc64-c665-00a8-8da088a7af56",
+      "content": "Coke"
+    },
+    {
+      "guid": "a679a474-8712-5c57-b933-ef10dffc149f",
+      "parentGuid": "72ccc3d9-76ac-f5ea-f9ad-19af7d1fb2a4",
+      "nextGuid": "488a67b6-f97b-5a04-f344-3cdb9b07e243",
+      "content": "Coffee"
+    },
+    {
+      "guid": "67c01608-4d49-9b02-7ba7-df52d3ca8135",
+      "parentGuid": "03ad97fa-51b1-0b8a-1f7e-09e7a0d8afa3",
+      "nextGuid": "ca48d6a6-1419-95df-6b82-706961e6f81a",
+      "content": "Next"
+    },
+    {
+      "guid": "ed887d6c-dace-fe56-8590-4e22f715dc13",
+      "parentGuid": "004a1a67-f090-fb64-8195-1e5104c7caf3",
+      "nextGuid": "92a458c6-a8c3-efb5-74ed-967b0f5dbddb",
+      "content": "Pay"
+    },
+    {
+      "guid": "57a68726-ead4-dd95-5684-90c50cdd7408",
+      "parentGuid": "004a1a67-f090-fb64-8195-1e5104c7caf3",
+      "nextGuid": "81259fb7-81ff-e9f9-3d87-be1089706f49",
+      "content": "Leave"
+    },
+    {
+      "guid": "d8a80ac7-4b16-8ef4-1687-8f2611ac268f",
+      "parentGuid": "8bb23a0a-d8a0-188e-7feb-95b28236e94d",
+      "nextGuid": "3ae01103-f270-5913-f0eb-f661148e3a83",
+      "content": "Goodbye."
+    },
+    {
+      "guid": "7297b614-7811-e9e7-b71e-303a74cdd526",
+      "parentGuid": "6ac57eb6-66a8-073c-078e-48ad6e1d4758",
+      "nextGuid": "92a458c6-a8c3-efb5-74ed-967b0f5dbddb",
+      "content": "Pay"
+    },
+    {
+      "guid": "45e03349-d4ae-836c-e196-3b2b88c70d46",
+      "parentGuid": "6ac57eb6-66a8-073c-078e-48ad6e1d4758",
+      "nextGuid": "3ae01103-f270-5913-f0eb-f661148e3a83",
+      "content": "Leave"
+    }
+  ],
+  "dialogueNodes": [
+    {
+      "guid": "120d1f52-8261-39a0-9e04-3d953c3eabf5",
+      "type": "DIALOGUE_NODE",
+      "characterGuid": "76c3bb08-71e9-6aeb-6fc6-3b92294590d3",
+      "label": "test1",
+      "content": "You walk up to the cashier and place your drink on the counter.",
+      "choiceGuids": [ "67c01608-4d49-9b02-7ba7-df52d3ca8135" ]
+    },
+    {
+      "guid": "ca48d6a6-1419-95df-6b82-706961e6f81a",
+      "type": "DIALOGUE_NODE",
+      "characterGuid": "82af98df-0b2b-137f-b57a-8cc02af2b968",
+      "label": "test1",
+      "content": "Your total is $3.50.",
+      "choiceGuids": [ "ed887d6c-dace-fe56-8590-4e22f715dc13", "57a68726-ead4-dd95-5684-90c50cdd7408" ]
+    },
+    {
+      "guid": "e00ecd11-0f8a-c7d6-1088-b5f1493ec8f6",
+      "type": "DIALOGUE_NODE",
+      "characterGuid": "82af98df-0b2b-137f-b57a-8cc02af2b968",
+      "label": "test1",
+      "content": "Thanks for shopping!",
+      "choiceGuids": [ "d8a80ac7-4b16-8ef4-1687-8f2611ac268f" ]
+    },
+    {
+      "guid": "81259fb7-81ff-e9f9-3d87-be1089706f49",
+      "type": "DIALOGUE_NODE",
+      "characterGuid": "82af98df-0b2b-137f-b57a-8cc02af2b968",
+      "label": "test1",
+      "content": "You forgot to pay!",
+      "choiceGuids": [ "7297b614-7811-e9e7-b71e-303a74cdd526", "45e03349-d4ae-836c-e196-3b2b88c70d46" ]
+    }
+  ],
+  "conditionNodes": [],
+  "randomNodes": [],
+  "eventNodes": [
+    {
+      "guid": "264908aa-35b4-dcd5-eb5b-df13f1c7ac2d",
+      "type": "EVENT_NODE",
+      "name": "player.addItem \"water\"",
+      "nextGuid": "120d1f52-8261-39a0-9e04-3d953c3eabf5"
+    },
+    {
+      "guid": "cc770227-fc64-c665-00a8-8da088a7af56",
+      "type": "EVENT_NODE",
+      "name": "player.addItem \"coke\"",
+      "nextGuid": "120d1f52-8261-39a0-9e04-3d953c3eabf5"
+    },
+    {
+      "guid": "488a67b6-f97b-5a04-f344-3cdb9b07e243",
+      "type": "EVENT_NODE",
+      "name": "player.addItem \"coffee\"",
+      "nextGuid": "120d1f52-8261-39a0-9e04-3d953c3eabf5"
+    },
+    {
+      "guid": "92a458c6-a8c3-efb5-74ed-967b0f5dbddb",
+      "type": "EVENT_NODE",
+      "name": "player.removeBalance 3.5",
+      "nextGuid": "e00ecd11-0f8a-c7d6-1088-b5f1493ec8f6"
+    },
+    {
+      "guid": "3ae01103-f270-5913-f0eb-f661148e3a83",
+      "type": "EVENT_NODE",
+      "name": "endScene"
+    }
+  ],
+  "repeatNodes": []
+}
