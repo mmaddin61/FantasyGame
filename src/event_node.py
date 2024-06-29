@@ -1,7 +1,7 @@
 from node import Node
 
 class EventNode(Node):
-    def __init__(self, guid, name, next_guid):
+    def __init__(self, guid, name, next_guid=None):
         super().__init__(guid, 'EVENT_NODE')
         self.name = name
         self.next_guid = next_guid

@@ -76,6 +76,22 @@ def parse_events(data):
         list: Event objects.
     """
     events = []
-    for event in data['events']:
-        events.append(EventNode(event['guid'], event['content'], event['nextGuid']))
+    for event in data['eventNodes']:
+        print(event)  # Debug line to see the structure of each event
+        if 'nextGuid' not in event:
+            events.append(EventNode(event['guid'], event['name']))
+        else:
+            events.append(EventNode(event['guid'], event['name'], event['nextGuid']))
     return events
+
+def parse_root(data):
+    """Parses the root node from the JSON data.
+    
+    Args:
+        data (dict): The JSON data.
+
+    Returns:
+        Node: The root node.
+    """
+    root = data['root']
+    return DialogueNode(root['guid'], root['characterGuid'], root['label'], root['content'], root['choiceGuids'])
