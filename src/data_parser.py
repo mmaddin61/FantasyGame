@@ -1,8 +1,12 @@
 import json
 from exceptions import DialogueDataError
-from character import Character
-from node import Node
-from choice import Choice
+#from character import Character
+#from node import Node
+#from choice import Choice
+from character_node import CharacterNode
+from dialogue_node import DialogueNode
+from choice_node import ChoiceNode
+from event_node import EventNode
 
 def load_json_data(file_path):
     """Loads the JSON data from the specified file path.
@@ -31,11 +35,11 @@ def parse_characters(data):
     """
     characters = []
     for character in data['characters']:
-        characters.append(Character(character['guid'], character['name']))
+        characters.append(CharacterNode(character['guid'], character['name']))
     return characters
 
-def parse_nodes(data):
-    """Parses the nodes from the JSON data.
+def parse_dialogue(data):
+    """Parses the dialogue from the JSON data.
     
     Args:
         data (dict): The JSON data.
@@ -44,8 +48,8 @@ def parse_nodes(data):
         list: Node objects.
     """
     nodes = []
-    for node in data['nodes']:
-        nodes.append(Node(node['guid'], node['type'], node['character_guid'], node['choice_guids'], node['label'], node['content']))
+    for node in data['dialogueNodes']:
+        nodes.append(DialogueNode(node['guid'], node['characterGuid'], node['label'], node['content'], node['choiceGuids']))
     return nodes
 
 def parse_choices(data):
@@ -59,5 +63,19 @@ def parse_choices(data):
     """
     choices = []
     for choice in data['choices']:
-        choices.append(Choice(choice['guid'], choice['label'], choice['target_node_guid']))
+        choices.append(ChoiceNode(choice['guid'], choice['parentGuid'], choice['nextGuid'], choice['content']))
     return choices
+
+def parse_events(data):
+    """Parses the events from the JSON data.
+    
+    Args:
+        data (dict): The JSON data.
+
+    Returns:
+        list: Event objects.
+    """
+    events = []
+    for event in data['events']:
+        events.append(EventNode(event['guid'], event['content'], event['nextGuid']))
+    return events
